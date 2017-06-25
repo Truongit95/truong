@@ -1,12 +1,12 @@
-#Cách cài đặt
+# Cách cài đặt
 1. Cài đặt Node js: https://nodejs.org/en/
 2. Cài đăt thư viện: tại thư mục chứ project mở cmd gỏ vào lệnh: `npm install`
-#Cách sử dụng
+# Cách sử dụng
 1. Tại thư mục chứa project mở cmd gỏ lệnh:`nodemon` để bắt đầu start serve.
 2. Sau khi serve start thành công thì trình duyệt có thể sử dụng:`http://localhost:3000`
 # Danh sách các API
 
-#Users (tài khoản)
+# Users (tài khoản)
 
 1. GET `/api/users/getall` lấy ra danh sách các User có trong database
 ```
@@ -54,9 +54,9 @@ localhost:3000/api/users/getall
 ```
 2. GET `/api/users/id` lấy ra thông tin tài khoản có mã là id
 ```
-##ví dụ:
+## ví dụ:
 localhost:3000/api/users/1
-##trả về
+## trả về
 {
     "Id": 1,
     "Username": "hieu",
@@ -78,9 +78,9 @@ localhost:3000/api/users/1
 ```
 3. POST `/api/users/register` đăng ký một user mới trong database
 ```
-##ví dụ
+## ví dụ
 localhost:3000/api/users/register
-##kiểu dữ liệu nhận vào
+## kiểu dữ liệu nhận vào
 {
     "username":"truong",
     "password":"123456789", 
@@ -91,7 +91,7 @@ Tạo tài khoản thành công
 ```
 4. POST `/api/users/login` đăng nhập tài khoản vào hệ thống với username và password
 ```
-##Ví dụ
+## Ví dụ
 localhost:3000/api/users/login
 object đầu vào 
 {
@@ -120,7 +120,7 @@ kiểu dữ liệu trả về
 ```
 5. POST `/api/users/update` cập nhật thông tin của tài khoản
 ```
-##Ví dụ
+## Ví dụ
 localhost:3000/api/users/update
 object đầu vào
 {
@@ -133,7 +133,7 @@ kiểu dữ liệu trả về
 Cập nhật thành công
 ```
 
-#Subject (môn học)
+# Subject (môn học)
 1. GET `/api/subjects` lấy ra tất cả các môn học có theo khoa
 ```
 ##ví dụ
@@ -168,7 +168,7 @@ kiểu dữ liệu trả về
 ```
 2. GET `/api/subjects/faculties` lấy ra danh sách các khoa có trong database
 ```
-##Ví dụ
+## Ví dụ
 localhost:3000/api/subjects/faculties
 kiểu dữ liệu trả về
 [
@@ -188,7 +188,7 @@ kiểu dữ liệu trả về
 ```
 3. GET `/api/subjects/id` lấy ra thông tin chi tiết môn học theo id môn học
 ```
-##Ví dụ
+## Ví dụ
 localhost:3000/api/subjects/1
 kiểu dữ liệu trả về
 {
@@ -202,7 +202,7 @@ kiểu dữ liệu trả về
 ```
 4. GET `/api/subjects/faculties/id` lấy ra các môn học theo khoa (FacultyId)
 ```
-##Ví dụ
+## Ví dụ
 localhost:3000/api/subjects/faculties/4
 kiểu dữ liệu trả về
 [
@@ -235,6 +235,6 @@ kiểu dữ liệu trả về
 5. POST `/api/subjects/generatesheet` tạo đề thi với gi////
 ```
 ```
-#Cài đặt nâng cao
+# Cài đặt nâng cao
 1. Để dễ sử dụng có thể cài Postman để tiện cho việc sử dụng các API tại cửa hàng Google chrome: `https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?utm_source=chrome-ntp-icon`.
     
