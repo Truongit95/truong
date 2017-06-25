@@ -57,8 +57,8 @@ router.get('/getexam', function (req, res, next) {
             var info = data;
             subjectService.getQuestionSheetDetails(questionSheetId)
                 .then((data) => {
-                    res.status(200).json(data);
-                    // res.status(200).json({info: info, details: data});
+                   // res.status(200).json(data);
+                     res.status(200).json({info: info, details: data});
                 })
                 .catch((err) => {
                     res.status(404).send('Không thể lấy chi tiết đề thi,', err);
