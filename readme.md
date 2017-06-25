@@ -1,12 +1,12 @@
-################# Cách cài đặt ###################
+#Cách cài đặt
 1. Cài đặt Node js: https://nodejs.org/en/
 2. Cài đăt thư viện: tại thư mục chứ project mở cmd gỏ vào lệnh: `npm install`
-################# Cách sử dụng ###################
+#Cách sử dụng
 1. Tại thư mục chứa project mở cmd gỏ lệnh:`nodemon` để bắt đầu start serve.
 2. Sau khi serve start thành công thì trình duyệt có thể sử dụng:`http://localhost:3000`
-################# Danh sách các API ###################
+# Danh sách các API
 
-##Users (tài khoản)##
+#Users (tài khoản)
 
 1. GET `/api/users/getall` lấy ra danh sách các User có trong database
 ```
@@ -133,7 +133,7 @@ kiểu dữ liệu trả về
 Cập nhật thành công
 ```
 
-##Subject (môn học)##
+#Subject (môn học)
 1. GET `/api/subjects` lấy ra tất cả các môn học có theo khoa
 ```
 ##ví dụ
@@ -235,6 +235,6 @@ kiểu dữ liệu trả về
 5. POST `/api/subjects/generatesheet` tạo đề thi với gi////
 ```
 ```
-################# Cài đặt nâng cao ###################
+#Cài đặt nâng cao
 1. Để dễ sử dụng có thể cài Postman để tiện cho việc sử dụng các API tại cửa hàng Google chrome: `https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?utm_source=chrome-ntp-icon`.
     
