@@ -1,2 +1,0 @@
-# truong
-truong
