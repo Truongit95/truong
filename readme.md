@@ -6,7 +6,7 @@
 2. Sau khi serve start thành công thì trình duyệt có thể sử dụng:`http://localhost:3000`
 # Danh sách các API
 
-# Users (tài khoản)
+# Users (người dùng)
 
 1. GET `/api/users/getall` lấy ra danh sách các User có trong database
 ```
@@ -133,7 +133,7 @@ kiểu dữ liệu trả về
 Cập nhật thành công
 ```
 
-# Subject (môn học)
+# Subjects (môn học)
 1. GET `/api/subjects` lấy ra tất cả các môn học có theo khoa
 ```
 ##ví dụ
