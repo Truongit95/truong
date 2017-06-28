@@ -47,25 +47,30 @@ router.post('/generatesheet', function (req, res, next) {
         });
 });
 
-// get exam
+// get exam info
 router.get('/getexam', function (req, res, next) {
     var questionSheetId = req.query.questionSheetId;
     var userId = req.query.userId;
 
     subjectService.getQuestionSheetInfo(questionSheetId, userId)
         .then((data) => {
-            var info = data;
-            subjectService.getQuestionSheetDetails(questionSheetId)
-                .then((data) => {
-                   // res.status(200).json(data);
-                     res.status(200).json({info: info, details: data});
-                })
-                .catch((err) => {
-                    res.status(404).send('Không thể lấy chi tiết đề thi,', err);
-                });
+            res.status(200).json(data);
         })
         .catch((err) => {
             res.status(404).send('Không thể lấy thông tin đề thi,', err);
+        });
+});
+
+// get exam details
+router.get('/getexam/detail', function (req, res, next) {
+    var questionSheetId = req.query.questionSheetId;
+
+    subjectService.getQuestionSheetDetails(questionSheetId)
+        .then((data) => {
+            res.status(200).json(data);
+        })
+        .catch((err) => {
+            res.status(404).send('Không thể lấy chi tiết đề thi,', err);
         });
 });
 
