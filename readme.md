@@ -6,6 +6,12 @@
 2. Sau khi serve start thành công thì trình duyệt có thể sử dụng:`http://localhost:3000`
 # Danh sách các API
 
+# Questions (câu hỏi)
+
+1. GET `/api/questions/:id` lấy chi tiết câu hỏi theo mã
+
+2. GET `/api/questions/:id/answer` lấy chi tiết câu trả lời theo mã câu hỏi
+
 # Users (người dùng)
 
 1. GET `/api/users/getall` lấy ra danh sách các User có trong database
