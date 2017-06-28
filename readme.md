@@ -6,12 +6,6 @@
 2. Sau khi serve start thành công thì trình duyệt có thể sử dụng:`http://localhost:3000`
 # Danh sách các API
 
-# Questions (câu hỏi)
-
-1. GET `/api/questions/:id` lấy chi tiết câu hỏi theo mã
-
-2. GET `/api/questions/:id/answer` lấy chi tiết câu trả lời theo mã câu hỏi
-
 # Users (người dùng)
 
 1. GET `/api/users/getall` lấy ra danh sách các User có trong database
@@ -291,117 +285,121 @@ kiểu dữ liệu trả về
     }
 ]
 ```
-7. GET `/api/subjects/getexam` lấy ra danh sách các hỏi câu và câu trả lời để người dùng làm bài
+7. GET `/api/subjects/getexam` lấy ra thông tin đề thi
 ```
 # Ví dụ
-localhost:3000/api/subjects/getexam/?questionSheetId=24&userId=1   //24 là id đề thi và 1 là id user => load chi tiết đề thi theo iduser và id đề
+localhost:3000/api/subjects/getexam/?questionSheetId=63&userId=23   //63 là id đề thi và 23 là id user => load chi tiết đề thi theo iduser và id đề
 kiểu dữ liệu trả về
 {
-    "info": {                                // thông tin đề thi
-        "Id": "24",
-        "Name": "tiếng anh 7",
-        "CreateDate": "2017-06-25T00:00:00.000Z",
-        "Approved": null,
-        "Started": null,
-        "Completed": true,
-        "ExtraTime": null,
-        "ExtraTimeReason": null,
-        "Mark": 0,
-        "ShiftSubjectStudentId": null,
-        "NumberOfCorrect": null,
-        "Total": null,
-        "Difficulty": null,
-        "UserId": 1
-    },
-    "details": [   // danh sách câu hỏi và câu trả lời
-        {
-            "QuestionSheetId": "24",
-            "QuestionId": "13363",
-            "Order": 3,
-            "AnswerId": null,
-            "Correct": null,
-            "CreateDate": "2017-06-25T00:00:00.000Z",
-            "UpdateDate": null,
-            "ListenTimes": null,
-            "Question": {
-                "Id": "13363",
-                "Content": "\r\n<p><b>Câu\r\n11.</b>\r\nChọn đáp án <b><i>sai</i></b>.</p>\r\n",
-                "ParentId": "-1",
-                "Audio": false,
-                "Answers": [
-                    {
-                        "Id": "17369",
-                        "Content": "Tại \r\n\r\nmột \r\n\r\nvị \r\n\r\ntrí \r\n\r\nxác \r\n\r\nđịnh \r\n\r\ntrên \r\n\r\nTrái \r\n\r\nĐất \r\n\r\nvà \r\n\r\nở \r\n\r\ngần \r\n\r\nmặt \r\n\r\nđất\r\n\r\n, \r\n\r\ncác \r\n\r\nvật \r\n\r\nđều \r\n\r\nrơi \r\n\r\ntự \r\n\r\ndo \r\n\r\nvới \r\n\r\ncùng \r\n\r\nmột \r\n\r\ngia \r\n\r\ntốc \r\n\r\ng\r\n\r\n.",
-                        "Order": 1,
-                        "Correct": false
-                    },
-                    {
-                        "Id": "17370",
-                        "Content": "Trong \r\n\r\nchuyển \r\n\r\nđộng \r\n\r\nnhanh \r\n\r\ndần \r\n\r\nđều \r\n\r\ngia \r\n\r\ntốc \r\n\r\ncùng \r\n\r\ndấu \r\n\r\nvới \r\n\r\nvậntốcv<sub>0</sub>\r\n\r\n.",
-                        "Order": 2,
-                        "Correct": false
-                    },
-                    {
-                        "Id": "17371",
-                        "Content": "Gia \r\n\r\ntốc \r\n\r\ncủa \r\n\r\nchuyển \r\n\r\nđộng \r\n\r\nthẳng \r\n\r\nbiến \r\n\r\nđổi \r\n\r\nđều \r\n\r\nlà \r\n\r\nđại \r\n\r\nlượng \r\n\r\nkhông \r\n\r\nđổi\r\n\r\n.",
-                        "Order": 3,
-                        "Correct": false
-                    },
-                    {
-                        "Id": "17372",
-                        "Content": "Chuyển \r\n\r\nđộng \r\n\r\nrơi \r\n\r\ntự \r\n\r\ndo \r\n\r\nlà \r\n\r\nchuyển \r\n\r\nđộng \r\n\r\nthẳng \r\n\r\nchậm \r\n\r\ndầnđều\r\n\r\n.",
-                        "Order": 4,
-                        "Correct": true
-                    }
-                ]
-            }
-        },
-        {
-            "QuestionSheetId": "24",
-            "QuestionId": "13382",
-            "Order": 5,
-            "AnswerId": null,
-            "Correct": null,
-            "CreateDate": "2017-06-25T00:00:00.000Z",
-            "UpdateDate": null,
-            "ListenTimes": null,
-            "Question": {
-                "Id": "13382",
-                "Content": "\r\n<p><b>Câu 30.</b> Chọn câu\r\nđúng.</p>\r\n",
-                "ParentId": "-1",
-                "Audio": false,
-                "Answers": [
-                    {
-                        "Id": "17445",
-                        "Content": "Trong \r\n\r\ncác \r\n\r\nchuyển \r\n\r\nđộng \r\n\r\ntròn \r\n\r\nđều \r\n\r\ncó \r\n\r\ncùng \r\n\r\nbán \r\n\r\nkính\r\n\r\n, \r\n\r\nchuyển \r\n\r\nđộng \r\n\r\nnào \r\n\r\ncó \r\n\r\nchu \r\n\r\nkỳ \r\n\r\nquay \r\n\r\nlớn \r\n\r\nhơn \r\n\r\nthì \r\n\r\ncó \r\n\r\nvận \r\n\r\ntốc \r\n\r\ndài \r\n\r\nlớn \r\n\r\nhơn\r\n\r\n.",
-                        "Order": 1,
-                        "Correct": false
-                    },
-                    {
-                        "Id": "17446",
-                        "Content": "Trong \r\n\r\nchuyển \r\n\r\nđộng \r\n\r\ntròn \r\n\r\nđều\r\n\r\n, \r\n\r\nchuyển \r\n\r\nđộng \r\n\r\nnào \r\n\r\ncó \r\n\r\nchu \r\n\r\nkỳ \r\n\r\nquay \r\n\r\nnhỏ \r\n\r\nhơn \r\n\r\nthì \r\n\r\ncó \r\n\r\nvận \r\n\r\ntốc \r\n\r\ngóc \r\n\r\nnhỏ \r\n\r\nhơn\r\n\r\n.",
-                        "Order": 2,
-                        "Correct": false
-                    },
-                    {
-                        "Id": "17447",
-                        "Content": "Trong \r\n\r\ncác \r\n\r\nchuyển \r\n\r\nđộng \r\n\r\ntròn \r\n\r\nđều\r\n\r\n, \r\n\r\nchuyển \r\n\r\nđộng \r\n\r\nnào \r\n\r\ncó \r\n\r\ntần \r\n\r\nsố \r\n\r\nlớn \r\n\r\nhơn \r\n\r\nthì \r\n\r\ncó \r\n\r\nchu \r\n\r\nkỳ \r\n\r\nnhỏ \r\n\r\nhơn\r\n\r\n.",
-                        "Order": 3,
-                        "Correct": true
-                    },
-                    {
-                        "Id": "17448",
-                        "Content": "Trong \r\n\r\ncác \r\n\r\nchuyển \r\n\r\nđộng \r\n\r\ntròn \r\n\r\nđều\r\n\r\n, \r\n\r\nvới \r\n\r\ncùng \r\n\r\nchu \r\n\r\nkỳ\r\n\r\n, \r\n\r\nchuyển \r\n\r\nđộng \r\n\r\nnào \r\n\r\ncó \r\n\r\nbán \r\n\r\nkính \r\n\r\nnhỏ \r\n\r\nhơn \r\n\r\nthì \r\n\r\ncó \r\n\r\nvận \r\n\r\ntốc \r\n\r\ngóc \r\n\r\nnhỏ \r\n\r\nhơn\r\n\r\n.",
-                        "Order": 4,
-                        "Correct": false
-                    }
-                ]
-            }
-        },
-    ]
+    "Id": "63",
+    "Name": "Mạng máy tính 23 20",
+    "CreateDate": "2017-06-28T00:00:00.000Z",
+    "Approved": null,
+    "Started": null,
+    "Completed": false,
+    "ExtraTime": null,
+    "ExtraTimeReason": null,
+    "Mark": null,
+    "ShiftSubjectStudentId": null,
+    "NumberOfCorrect": null,
+    "Total": null,
+    "Difficulty": null,
+    "UserId": 23
 }
 ```
-8. POST `/api/subjects/generatesheet` tạo đề thi với các giá trị đầu vào
+8. GET `/api/subjects/getexam/detail?questionSheetId=id` lấy ra chi tiết đề thi với id đề thi truyền vào
+```
+# Ví dụ
+localhost:3000/api/subjects/getexam/detail/?questionSheetId=63
+kiểu dữ liệu trả về
+[
+    {
+        "QuestionSheetId": "63",
+        "QuestionId": "13355",
+        "Order": 16,
+        "AnswerId": null,
+        "Correct": null,
+        "CreateDate": "2017-06-28T00:00:00.000Z",
+        "UpdateDate": null,
+        "ListenTimes": null,
+        "Question": {
+            "Id": "13355",
+            "Content": "\r\n<p><b>Câu\r\n3. </b>Một vật chuyển động thẳng đều với vận tốc v. Chọn\r\ntrục toạ độ ox có\r\nphương trùng với phương chuyển động, chiều dương là chiều chuyển động, gốc toạ độ\r\nO cách vị trí vật xuất phát một khoảng OA = x<sub>0 . </sub>Phương trình chuyển\r\nđộng của vật là:</p>\r\n",
+            "ParentId": "-1",
+            "Audio": false,
+            "Answers": [
+                {
+                    "Id": "17337",
+                    "Content": "http://i.imgur.com/DiajPQ7.jpg",
+                    "Order": 1,
+                    "Correct": false
+                },
+                {
+                    "Id": "17338",
+                    "Content": "http://i.imgur.com/DiajPQ7.jpg",
+                    "Order": 2,
+                    "Correct": true
+                },
+                {
+                    "Id": "17339",
+                    "Content": "http://i.imgur.com/DiajPQ7.jpg",
+                    "Order": 3,
+                    "Correct": false
+                },
+                {
+                    "Id": "17340",
+                    "Content": "http://i.imgur.com/DiajPQ7.jpg",
+                    "Order": 4,
+                    "Correct": false
+                }
+            ]
+        }
+    },
+    {
+        "QuestionSheetId": "63",
+        "QuestionId": "13356",
+        "Order": 19,
+        "AnswerId": null,
+        "Correct": null,
+        "CreateDate": "2017-06-28T00:00:00.000Z",
+        "UpdateDate": null,
+        "ListenTimes": null,
+        "Question": {
+            "Id": "13356",
+            "Content": "http://zmp3-mp3-s1-tr.zadn.vn/e7563f83e7c70e9957d6/727637092126384063?key=ASGr_LiWCzO3OEYrRtjKng&expires=1498728752",
+            "ParentId": "-1",
+            "Audio": true,
+            "Answers": [
+                {
+                    "Id": "17341",
+                    "Content": "http://zmp3-mp3-s1-tr.zadn.vn/3151ea8332c7db9982d6/8766360630999056592?key=Bl2zhQTnYnSit76yA0Eh1g&expires=1498728520",
+                    "Order": 1,
+                    "Correct": false
+                },
+                {
+                    "Id": "17342",
+                    "Content": "http://zmp3-mp3-s1-tr.zadn.vn/3151ea8332c7db9982d6/8766360630999056592?key=Bl2zhQTnYnSit76yA0Eh1g&expires=1498728520",
+                    "Order": 2,
+                    "Correct": false
+                },
+                {
+                    "Id": "17343",
+                    "Content": "http://zmp3-mp3-s1-tr.zadn.vn/3151ea8332c7db9982d6/8766360630999056592?key=Bl2zhQTnYnSit76yA0Eh1g&expires=1498728520",
+                    "Order": 3,
+                    "Correct": true
+                },
+                {
+                    "Id": "17344",
+                    "Content": "http://zmp3-mp3-s1-tr.zadn.vn/3151ea8332c7db9982d6/8766360630999056592?key=Bl2zhQTnYnSit76yA0Eh1g&expires=1498728520",
+                    "Order": 4,
+                    "Correct": false
+                }
+            ]
+        }
+    }
+]
+```
+9. POST `/api/subjects/generatesheet` tạo đề thi với các giá trị đầu vào
 ```
 # Ví dụ
 localhost:3000/api/subjects/generatesheet
@@ -418,7 +416,7 @@ kiểu dữ liệu trả về
     "QuestionSheet": "24"  // trả về id đề thi vừa được tạo
 }
 ```
-9. POST `/api/subjects/update/answer` cập nhật đáp án khi người dùng chọn đáp án lúc làm bài
+10. POST `/api/subjects/update/answer` cập nhật đáp án khi người dùng chọn đáp án lúc làm bài
 ```
 # ví du
 dử liệu đầu vào
