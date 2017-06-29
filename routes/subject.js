@@ -4,6 +4,22 @@ var moment = require('moment');
 var _ = require('lodash');
 var subjectService = require('../services/subjectService');
 
+// check question sheet is completed 
+router.get('/completed/:id', function (req, res, next) {
+    var id = req.params.id;
+    subjectService.isCompleteSheet(id)
+        .then((data) => {
+            // if there are sheets isn't completed
+            if (_.isEmpty(data)) {
+                res.status(200).json(null);
+            }
+            res.status(200).json({ questionSheetId: data });
+        })
+        .catch((err) => {
+            res.status(404);
+        });
+});
+
 // generate exam
 router.post('/generatesheet', function (req, res, next) {
     var number = req.body.number;

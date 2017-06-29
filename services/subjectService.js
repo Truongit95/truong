@@ -104,6 +104,16 @@ var getResult = (id) => {
     });
 }
 
+var isCompleteSheet = (id) => {
+    return QuestionSheets.findAll({
+        where: {
+            UserId: id,
+            Completed: false
+        },
+        attributes: ['Id']
+    });
+}
+
 exports.getListSubject = getListSubject;
 exports.getSubject = getSubject;
 exports.getSubjectByFaculty = getSubjectByFaculty;
@@ -116,3 +126,4 @@ exports.getQuestionSheetDetails = getQuestionSheetDetails;
 exports.updateAnswer = updateAnswer;
 exports.getMark = getMark;
 exports.getResult = getResult;
+exports.isCompleteSheet = isCompleteSheet;

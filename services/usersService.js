@@ -36,9 +36,20 @@ var checkExistUsername = (username) => {
     });
 }
 
+var changePassword = (newPass, id) => {
+    return Users.update({
+        Password: newPass
+    }, {
+            where: {
+                Id: id
+            }
+        });
+}
+
 exports.getAll = getAll;
 exports.getById = getById;
 exports.create = create;
 exports.update = update;
 exports.login = login;
 exports.checkExistUsername = checkExistUsername;
+exports.changePassword = changePassword;

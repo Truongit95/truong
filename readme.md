@@ -128,7 +128,7 @@ kiểu dữ liệu trả về
 ```
 ## Ví dụ
 localhost:3000/api/users/update
-object đầu vào
+object đầu vàoobject đầu vào
 {
     "id":"27",    // id user cần được update
     "name":"truong",   // tên người dùng cần update
@@ -137,6 +137,15 @@ object đầu vào
 }
 kiểu dữ liệu trả về
 Cập nhật thành công
+
+Nếu có mật khẩu mới sẽ cập nhật mật khẩu mới với 
+{
+    "id":"27",    // id user cần được update
+    "name":"truong",   // tên người dùng cần update
+    "email":"truong@gmail.com",   // email cần update
+    "phone":"01648935841"    // số điện thoại update
+    "newpass" : "Your new password" // mật khẩu mới của bạn
+}
 ```
 
 # Subjects (môn học)
@@ -420,7 +429,7 @@ kiểu dữ liệu trả về
 ```
 9. POST `/api/subjects/update/answer` cập nhật đáp án khi người dùng chọn đáp án lúc làm bài
 ```
-# ví du
+# ví dụ
 dử liệu đầu vào
 {
 	"questionSheetId":"24",  // id đề thi
@@ -430,6 +439,15 @@ dử liệu đầu vào
 kiểu dữ liệu trả về
 update thành công
 ```
+
+10. GET `/api/subjects/completed/:id` cập nhật đáp án khi người dùng chọn đáp án lúc làm bài
+```
+# ví dụ
+
+kiểu dữ liệu trả về : mảng cái question sheet id hiện đang chưa hoàn thành
+update thành công
+```
+
 # Cài đặt nâng cao
 1. Để dễ sử dụng có thể cài Postman để tiện cho việc sử dụng các API tại cửa hàng Google chrome: `https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?utm_source=chrome-ntp-icon`.
     

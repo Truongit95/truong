@@ -78,13 +78,25 @@ router.post('/update', function (req, res, next) {
     Email: req.body.email,
     Phone: req.body.phone
   }
+
   usersService.update(user, id)
     .then(() => {
+      // if have new password
+      if (req.body.newpass) {
+        usersService.changePassword(req.body.newpass, id)
+          .then(() => {
+            res.status(200).send('Cập nhật thành công');
+          })
+          .catch((err) => {
+            res.status(404).send('Không thể cập nhật vì, ', err);
+          });
+      }
       res.status(200).send('Cập nhật thành công');
     })
     .catch((err) => {
       res.status(404).send('Không thể cập nhật vì, ', err);
     });
+
 });
 
 
