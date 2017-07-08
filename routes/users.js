@@ -75,8 +75,8 @@ router.post('/update', function (req, res, next) {
   var id = req.body.id;
   var user = {
     Name: req.body.name,
-    Email: req.body.email,
-    Phone: req.body.phone
+    // Email: req.body.email,
+    // Phone: req.body.phone
   }
 
   usersService.update(user, id)

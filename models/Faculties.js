@@ -20,6 +20,11 @@ module.exports = function(sequelize, DataTypes) {
     Comment: {
       type: DataTypes.STRING,
       allowNull: true
+    },
+    Valided: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true,
+      defaultValue: '1'
     }
   }, {
     timestamps: false,

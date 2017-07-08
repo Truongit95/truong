@@ -43,6 +43,11 @@ module.exports = function(sequelize, DataTypes) {
     ListenTimes: {
       type: DataTypes.INTEGER,
       allowNull: true
+    },
+    Desktop: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true,
+      defaultValue: '0'
     }
   }, {
     timestamps: false,

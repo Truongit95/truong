@@ -1,20 +1,14 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('Answers', {
+  return sequelize.define('AnswersV', {
     Id: {
       type: DataTypes.BIGINT,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+      allowNull: false
     },
     QuestionId: {
       type: DataTypes.BIGINT,
-      allowNull: true,
-      references: {
-        model: 'Questions',
-        key: 'Id'
-      }
+      allowNull: true
     },
     Content: {
       type: DataTypes.STRING,
@@ -38,6 +32,6 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     timestamps: false,
-    tableName: 'Answers'
+    tableName: 'AnswersV'
   });
 };

@@ -1,12 +1,10 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('Questions', {
+  return sequelize.define('QuestionsV', {
     Id: {
       type: DataTypes.BIGINT,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+      allowNull: false
     },
     Content: {
       type: DataTypes.STRING,
@@ -14,43 +12,34 @@ module.exports = function(sequelize, DataTypes) {
     },
     Interchange: {
       type: DataTypes.BOOLEAN,
-      allowNull: true,
-      defaultValue: '1'
+      allowNull: true
     },
     SubjectiveDifficulty: {
       type: DataTypes.DECIMAL,
-      allowNull: true,
-      defaultValue: '((0.5))'
+      allowNull: true
     },
     SelectedTimes: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      defaultValue: '((0))'
+      allowNull: true
     },
     CorrectTimes: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      defaultValue: '((0))'
+      allowNull: true
     },
     Deleted: {
       type: DataTypes.BOOLEAN,
-      allowNull: true,
-      defaultValue: '0'
+      allowNull: true
     },
     ChapterId: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'Chapters',
-        key: 'Id'
-      }
+      allowNull: false
     },
     CreateDate: {
-      type: DataTypes.STRING,
+      type: DataTypes.DATE,
       allowNull: true
     },
     UpdateDate: {
-      type: DataTypes.STRING,
+      type: DataTypes.DATE,
       allowNull: true
     },
     Mark: {
@@ -88,14 +77,9 @@ module.exports = function(sequelize, DataTypes) {
     ObjectiveDifficulty: {
       type: DataTypes.DECIMAL,
       allowNull: true
-    },
-    Valided: {
-      type: DataTypes.BOOLEAN,
-      allowNull: true,
-      defaultValue: '1'
     }
   }, {
     timestamps: false,
-    tableName: 'Questions'
+    tableName: 'QuestionsV'
   });
 };

@@ -1,7 +1,7 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('getQuestion', {
+  return sequelize.define('QuestionV', {
     Id: {
       type: DataTypes.BIGINT,
       allowNull: false
@@ -80,6 +80,6 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     timestamps: false,
-    tableName: 'getQuestion'
+    tableName: 'QuestionV'
   });
 };

@@ -1,9 +1,9 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('Chapters', {
+  return sequelize.define('PaperQuestionSheets', {
     Id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.BIGINT,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
@@ -12,42 +12,45 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: true
     },
-    Content: {
-      type: DataTypes.STRING,
+    CreateDate: {
+      type: DataTypes.DATE,
       allowNull: true
     },
-    Order: {
+    ExportDate: {
+      type: DataTypes.DATE,
+      allowNull: true
+    },
+    TestDate: {
+      type: DataTypes.DATE,
+      allowNull: true
+    },
+    Duration: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    ParentId: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    Deleted: {
+    Exported: {
       type: DataTypes.BOOLEAN,
       allowNull: true,
       defaultValue: '0'
     },
-    SubjectId: {
-      type: DataTypes.INTEGER,
+    PaperShiftSubjectId: {
+      type: DataTypes.BIGINT,
       allowNull: true,
       references: {
-        model: 'Subjects',
+        model: 'PaperShiftSubjects',
         key: 'Id'
       }
     },
-    ManagementOrder: {
-      type: DataTypes.INTEGER,
+    ObjectiveDifficulty: {
+      type: DataTypes.DECIMAL,
       allowNull: true
     },
-    Valided: {
-      type: DataTypes.BOOLEAN,
-      allowNull: true,
-      defaultValue: '1'
+    Total: {
+      type: DataTypes.INTEGER,
+      allowNull: true
     }
   }, {
     timestamps: false,
-    tableName: 'Chapters'
+    tableName: 'PaperQuestionSheets'
   });
 };

@@ -1,35 +1,35 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('MatrixDetails', {
+  return sequelize.define('PaperShiftSubjects', {
     Id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.BIGINT,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
     },
+    ShiftId: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: 'Shifts',
+        key: 'Id'
+      }
+    },
+    SubjectId: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
     MatrixId: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       references: {
         model: 'Matrices',
         key: 'Id'
       }
-    },
-    ChapterId: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    Quantity: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    Excluded: {
-      type: DataTypes.STRING,
-      allowNull: true
     }
   }, {
     timestamps: false,
-    tableName: 'MatrixDetails'
+    tableName: 'PaperShiftSubjects'
   });
 };

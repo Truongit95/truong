@@ -30,15 +30,18 @@ module.exports = function(sequelize, DataTypes) {
     },
     LogIn: {
       type: DataTypes.BOOLEAN,
-      allowNull: true
+      allowNull: false,
+      defaultValue: '0'
     },
     LastLogIn: {
       type: DataTypes.BOOLEAN,
-      allowNull: true
+      allowNull: false,
+      defaultValue: '0'
     },
     LastLogOut: {
       type: DataTypes.BOOLEAN,
-      allowNull: true
+      allowNull: false,
+      defaultValue: '0'
     }
   }, {
     timestamps: false,

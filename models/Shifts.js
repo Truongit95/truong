@@ -22,7 +22,8 @@ module.exports = function(sequelize, DataTypes) {
     },
     Activated: {
       type: DataTypes.BOOLEAN,
-      allowNull: true
+      allowNull: false,
+      defaultValue: '0'
     },
     ActivateTime: {
       type: DataTypes.DATE,
@@ -34,7 +35,8 @@ module.exports = function(sequelize, DataTypes) {
     },
     Ended: {
       type: DataTypes.BOOLEAN,
-      allowNull: true
+      allowNull: false,
+      defaultValue: '0'
     },
     EndDate: {
       type: DataTypes.DATE,
@@ -50,11 +52,18 @@ module.exports = function(sequelize, DataTypes) {
     },
     QuestionSheetCreated: {
       type: DataTypes.BOOLEAN,
-      allowNull: true
+      allowNull: false,
+      defaultValue: '0'
     },
     Deleted: {
       type: DataTypes.BOOLEAN,
-      allowNull: true
+      allowNull: false,
+      defaultValue: '0'
+    },
+    Desktop: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true,
+      defaultValue: '0'
     }
   }, {
     timestamps: false,

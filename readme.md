@@ -65,8 +65,6 @@ Nếu có mật khẩu mới sẽ cập nhật mật khẩu mới với
 {
     "id":"id",    // id user cần được update
     "name":"name",   // tên người dùng cần update
-    "email":"youremail",   // email cần update
-    "phone":"yourphone"    // số điện thoại update
     "newpass" : "Your new password" // mật khẩu mới của bạn
 }
 ```

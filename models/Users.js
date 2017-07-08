@@ -33,19 +33,19 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: true
     },
     LastActivity: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING,
       allowNull: true
     },
     LastLogIn: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING,
       allowNull: true
     },
     LastPasswordChanged: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING,
       allowNull: true
     },
     LastLogOut: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING,
       allowNull: true
     },
     Salt: {
@@ -60,12 +60,12 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.BOOLEAN,
       allowNull: true
     },
-    Email: {
-      type: DataTypes.STRING,
+    FacultyId: {
+      type: "NCHAR",
       allowNull: true
     },
-    Phone: {
-      type: DataTypes.STRING,
+    SubjectId: {
+      type: "NCHAR",
       allowNull: true
     }
   }, {

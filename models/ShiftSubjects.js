@@ -25,7 +25,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     MatrixId: {
-      type: DataTypes.BIGINT,
+      type: DataTypes.INTEGER,
       allowNull: true,
       references: {
         model: 'Matrices',

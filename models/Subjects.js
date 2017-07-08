@@ -32,6 +32,11 @@ module.exports = function(sequelize, DataTypes) {
     ManagementOrder: {
       type: DataTypes.INTEGER,
       allowNull: true
+    },
+    Valided: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true,
+      defaultValue: '1'
     }
   }, {
     timestamps: false,

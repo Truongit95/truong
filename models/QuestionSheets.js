@@ -18,15 +18,18 @@ module.exports = function(sequelize, DataTypes) {
     },
     Approved: {
       type: DataTypes.BOOLEAN,
-      allowNull: true
+      allowNull: false,
+      defaultValue: '0'
     },
     Started: {
       type: DataTypes.BOOLEAN,
-      allowNull: true
+      allowNull: false,
+      defaultValue: '0'
     },
     Completed: {
       type: DataTypes.BOOLEAN,
-      allowNull: true
+      allowNull: false,
+      defaultValue: '0'
     },
     ExtraTime: {
       type: DataTypes.INTEGER,
@@ -59,6 +62,15 @@ module.exports = function(sequelize, DataTypes) {
     UserId: {
       type: DataTypes.INTEGER,
       allowNull: true
+    },
+    ShiftSubjectId: {
+      type: DataTypes.BIGINT,
+      allowNull: true
+    },
+    Desktop: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true,
+      defaultValue: '0'
     }
   }, {
     timestamps: false,

@@ -24,6 +24,11 @@ module.exports = function(sequelize, DataTypes) {
     Deleted: {
       type: DataTypes.BOOLEAN,
       allowNull: true
+    },
+    Desktop: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true,
+      defaultValue: '0'
     }
   }, {
     timestamps: false,
