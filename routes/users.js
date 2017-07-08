@@ -38,11 +38,11 @@ router.post('/register', function (req, res, next) {
       } else {
         usersService.create(user)
           .then(() => {
-            res.status(201).send('Tạo tài khoản thành công');
+            res.status(201).json({ message: 'Tạo tài khoản thành công' });
           })
           .catch((err) => {
             console.error(err);
-            res.status(404).send('Không thể tạo người dùng');
+            res.status(404).json({ message: 'Không thể tạo người dùng' });
           });
       }
     })
@@ -66,7 +66,7 @@ router.post('/login', function (req, res, next) {
       res.status(200).json(data);
     })
     .catch((err) => {
-      res.status(404).send('Lỗi hệ thống, ', err);
+      res.status(404).send({ message: 'Lỗi hệ thống, ' + err });
     });
 });
 
@@ -85,16 +85,16 @@ router.post('/update', function (req, res, next) {
       if (req.body.newpass) {
         usersService.changePassword(req.body.newpass, id)
           .then(() => {
-            res.status(200).send('Cập nhật thành công');
+            res.status(200).json({ message: 'Cập nhật thành công' });
           })
           .catch((err) => {
-            res.status(404).send('Không thể cập nhật vì, ', err);
+            res.status(404).json({ message: 'Không thể cập nhật vì, ' + err });
           });
       }
-      res.status(200).send('Cập nhật thành công');
+      res.status(200).json({ message: 'Cập nhật thành công' });
     })
     .catch((err) => {
-      res.status(404).send('Không thể cập nhật vì, ', err);
+      res.status(404).json({ message: 'Không thể cập nhật vì, ' + err });
     });
 
 });
