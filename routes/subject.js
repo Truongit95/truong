@@ -47,7 +47,6 @@ router.post('/generatesheet', function (req, res, next) {
                             CreateDate: moment().format('YYYY-MM-DD')
                         }
                         subjectService.createQuestionSheetDetail(detail).then((data) => {
-                            // console.log('Tạo chi tiết', arrayQuestions[i].Id);
                         }).catch((err) => {
                             console.error('Không thể tạo câu hỏi vì', err);
                         });
@@ -83,7 +82,35 @@ router.get('/getexam/detail', function (req, res, next) {
 
     subjectService.getQuestionSheetDetails(questionSheetId)
         .then((data) => {
-            res.status(200).json(data);
+            // handle for url
+            var result = _.map(data, (v, i) => {
+                return {
+                    QuestionSheetId: v.QuestionSheetId,
+                    QuestionId: v.QuestionId,
+                    Order: v.Order,
+                    AnswerId: v.AnswerId,
+                    Correct: v.Correct,
+                    CreateDate: v.CreateDate,
+                    UpdateDate: v.UpdateDate,
+                    ListenTimes: v.ListenTimes,
+                    Question: {
+                        Id: v.Question.Id,
+                        Content: v.Question.Content.replace(/D:\\\\Files\\/g, '104.198.181.185:3000\\public\\Files\\'),
+                        ParentId: v.Question.ParentId,
+                        Audio: v.Question.Audio,
+                        Answers: _.map(v.Question.Answers, (v, i) => {
+                            return {
+                                Id: v.Id,
+                                Content: v.Content.replace(/D:\\\\Files\\/g, '104.198.181.185:3000\\public\\Files\\'),
+                                Order: v.Order,
+                                Correct: v.Correct
+                            }
+                        })
+                    }
+                }
+            })
+
+            res.status(200).json(result);
         })
         .catch((err) => {
             res.status(404).send('Không thể lấy chi tiết đề thi,', err);
