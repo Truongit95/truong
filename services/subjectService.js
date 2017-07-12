@@ -119,7 +119,7 @@ var getReviewQuestions = (questionSheetId) => {
         where: {
             QuestionSheetId: questionSheetId
         },
-        attributes: ['QuestionId', 'AnswerId'],
+        attributes: ['QuestionId', ['AnswerId', 'AnnswerCurrentChoose'], 'Order'],
         include: [{
             model: Questions, attributes: ['Id'],
             include: [{ model: Answers, attributes: ['Id', 'Order',] }]
