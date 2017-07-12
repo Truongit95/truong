@@ -114,6 +114,19 @@ var isCompleteSheet = (id) => {
     });
 }
 
+var getReviewQuestions = (questionSheetId) => {
+    return QuestionSheetDetails.findAll({
+        where: {
+            QuestionSheetId: questionSheetId
+        },
+        attributes: ['QuestionId', 'AnswerId'],
+        include: [{
+            model: Questions, attributes: ['Id'],
+            include: [{ model: Answers, attributes: ['Id', 'Order',] }]
+        }]
+    });
+}
+
 exports.getListSubject = getListSubject;
 exports.getSubject = getSubject;
 exports.getSubjectByFaculty = getSubjectByFaculty;
@@ -127,3 +140,4 @@ exports.updateAnswer = updateAnswer;
 exports.getMark = getMark;
 exports.getResult = getResult;
 exports.isCompleteSheet = isCompleteSheet;
+exports.getReviewQuestions = getReviewQuestions;

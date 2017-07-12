@@ -168,6 +168,13 @@ kiểu dữ liệu trả về : mảng cái question sheet id hiện đang chưa
 return string update thành công
 ```
 
+12. GET `/api/subjects/review/exam?questionSheetId=[input]` lấy danh sách các câu đã làm dựa vào mã câu trả lời đang hiện hành
+```
+# ví dụ
+
+kiểu dữ liệu trả về : mảng các câu hỏi lồng mảng các câu trả lời. So sánh [mã câu trả lời hiện hành] và [mã câu trả lời] trong mảng và lọc theo A B C D ứng với [Order - thứ tự] 1 2 3 4
+```
+
 # Cài đặt nâng cao
 1. Để dễ sử dụng có thể cài Postman để tiện cho việc sử dụng các API tại cửa hàng Google chrome: `https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?utm_source=chrome-ntp-icon`.
     

@@ -117,6 +117,17 @@ router.get('/getexam/detail', function (req, res, next) {
         });
 });
 
+router.get('/review/exam', (req, res, next) => {
+    var questionSheetId = req.query.questionSheetId;
+    subjectService.getReviewQuestions(questionSheetId)
+        .then((data) => {
+            res.status(200).json(data);
+        })
+        .catch((err) => {
+            res.status(404).send(false);
+        })
+})
+
 // update current answer
 router.post('/update/answer', function (req, res, next) {
     var questionSheetId = req.body.questionSheetId;
