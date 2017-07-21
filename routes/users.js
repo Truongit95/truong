@@ -4,6 +4,17 @@ var moment = require('moment');
 var _ = require('lodash');
 var usersService = require('../services/usersService');
 
+//get top mark
+router.get('/gettopmark', (req, res, next) => {
+  usersService.getTopMark()
+    .then((data) => {
+      res.json(data[0]);
+    })
+    .catch((err) => {
+      res.send(false);
+    })
+});
+
 // get all users
 router.get('/getall', function (req, res, next) {
   usersService.getAll()
@@ -98,6 +109,5 @@ router.post('/update', function (req, res, next) {
     });
 
 });
-
 
 module.exports = router;

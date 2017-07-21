@@ -1,6 +1,7 @@
 const DataTypes = require('sequelize');
 var sequelize = require('../models/db');
 var Users = require('../models/Users')(sequelize, DataTypes);
+var QuestionSheets = require('../models/QuestionSheets')(sequelize, DataTypes);
 
 var getAll = () => {
     return Users.findAll();
@@ -46,6 +47,10 @@ var changePassword = (newPass, id) => {
         });
 }
 
+var getTopMark = () =>{
+    return sequelize.query(`SELECT UserId, (SUM(mark)/COUNT(id)) FROM QuestionSheets WHERE Completed = 1 GROUP BY UserId ORDER BY (SUM(mark)/COUNT(id)) DESC`);
+}
+
 exports.getAll = getAll;
 exports.getById = getById;
 exports.create = create;
@@ -53,3 +58,4 @@ exports.update = update;
 exports.login = login;
 exports.checkExistUsername = checkExistUsername;
 exports.changePassword = changePassword;
+exports.getTopMark = getTopMark;

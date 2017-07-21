@@ -1,6 +1,7 @@
 const DataTypes = require('sequelize');
 var sequelize = require('../models/db');
 var Subjects = require('../models/Subjects')(sequelize, DataTypes);
+var Chapters = require('../models/Chapters')(sequelize, DataTypes);
 var Faculties = require('../models/Faculties')(sequelize, DataTypes);
 var Questions = require('../models/Questions')(sequelize, DataTypes);
 var Answers = require('../models/Answers')(sequelize, DataTypes);
@@ -126,6 +127,8 @@ var getReviewQuestions = (questionSheetId) => {
         }]
     });
 }
+
+
 
 exports.getListSubject = getListSubject;
 exports.getSubject = getSubject;
