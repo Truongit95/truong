@@ -11,6 +11,7 @@ var users = require('./routes/users');
 var subjects = require('./routes/subject');
 var questions = require('./routes/questions');
 var chapters = require('./routes/chapter');
+var matricies = require('./routes/matrix');
 
 var app = express();
 
@@ -32,6 +33,7 @@ app.use('/api/users', users);
 app.use('/api/subjects', subjects);
 app.use('/api/questions', questions);
 app.use('/api/chapters', chapters);
+app.use('/api/matrices', matricies);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
