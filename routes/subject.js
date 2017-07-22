@@ -25,6 +25,8 @@ router.post('/generatesheet', function (req, res, next) {
     var number = req.body.number;
     var subjectId = req.body.subjectId;
     var subjectName = req.body.subjectName;
+    var bgDiff = req.body.bgDiff;
+    var edDiff = req.body.edDiff;
     var userId = req.body.userId;
     subjectService.generateExamBySubject(number, subjectId)
         .then((data) => {

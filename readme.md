@@ -139,6 +139,8 @@ dử liệu đầu vào
 	"number":"5", // số câu cần tạo cho 1 đề
 	"subjectId":"155",  // id môn học cần tạo đề
 	"subjectName":"tiếng anh 7",   // tiêu đề cho đề thi
+    "bgDiff":"0.1" // độ khó câu hỏi bắt đầu từ
+    "edDiff":"0.9" // độ khó câu hỏi kết thúc từ
 	"userId":"1"  // đề thi này của user nào
 }
 kiểu dữ liệu trả về object
@@ -160,7 +162,7 @@ kiểu dữ liệu trả về string
 update thành công
 ```
 
-11. GET `/api/subjects/completed/:id` cập nhật đáp án khi người dùng chọn đáp án lúc làm bài
+11. GET `/api/subjects/completed/:id` kiểm tra đề thi đã hoàn thành hay chưa
 ```
 # ví dụ
 

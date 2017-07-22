@@ -46,8 +46,8 @@ var getSubjectByFaculty = (id) => {
     })
 }
 
-var generateExamBySubject = (number, subjectId) => {
-    return sequelize.query(`EXEC dbo.GenerateExam @number = ${number}, @subjectId = ${subjectId}`);
+var generateExamBySubject = (number, subjectId, bgDiff, endDiff) => {
+    return sequelize.query(`EXEC dbo.GenerateExam @number = ${number}, @subjectId = ${subjectId}, @bgdiff = ${bgDiff}, @enddiff = ${endDiff}`);
 }
 
 var createQuestionSheet = (object) => {
