@@ -68,7 +68,7 @@ Nếu có mật khẩu mới sẽ cập nhật mật khẩu mới với
     "newpass" : "Your new password" // mật khẩu mới của bạn
 }
 ```
-
+5. `/api/users/gettopmark` lấy ra danh sách người dùng theo số điểm trung bình từ cao đến thấp
 # Subjects (môn học)
 1. GET `/api/subjects` lấy ra tất cả các môn học có theo khoa
 ```
