@@ -162,12 +162,17 @@ kiểu dữ liệu trả về string
 update thành công
 ```
 
-11. GET `/api/subjects/completed/:id` kiểm tra đề thi đã hoàn thành hay chưa
+11. GET `/api/subjects/completed/:id` kiểm tra đề thi đã hoàn thành hay chưa, nhận vào id user
 ```
 # ví dụ
-
-kiểu dữ liệu trả về : mảng cái question sheet id hiện đang chưa hoàn thành
-return string update thành công
+\\\
+{
+    "questionSheetId": [
+        {
+            "Id": "422" // id đề thi chưa hoàn thành, nếu =null tức là hoàn thành hết các đề
+        }
+    ]
+}
 ```
 
 12. GET `/api/subjects/review/exam?questionSheetId=[input]` lấy danh sách các câu đã làm dựa vào mã câu trả lời đang hiện hành
